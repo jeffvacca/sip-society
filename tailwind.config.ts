@@ -49,13 +49,22 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+			offwhite: 'rgb(242,231,237)',
+			offwhitedark: 'rgb(239,238,233)',
+			offwhitedarker: 'rgb(210,202,192)',
+			gold: 'rgb(176,158,134)',
+			dark: 'rgb(32, 32, 32)',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		fontFamily: {
+			poiret: ['var(--font-poiret-one)'],
+			didact: ['var(--font-didact-gothic)'],
+		}
   	}
   },
   plugins: [require("tailwindcss-animate")],
