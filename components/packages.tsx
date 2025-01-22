@@ -47,7 +47,7 @@ export default function Packages() {
                     </ul>
                 </div>
                 <div className="md:grid grid-cols-3 gap-8 mb-32">
-                    {packages.map((item, index) => <Package title={item.title} content={item.content} footer={item.footer} key={item.title} />)}
+                    {packages.map((item) => <Package title={item.title} content={item.content} footer={item.footer} key={item.title} />)}
                 </div>
                 <div className="mb-16 md:mb-24 leading-10 text-2xl md:text-3xl uppercase text-center font-poiret text-white">Ask about custom pricing for our exclusive beer and wine-only packages!</div>
                 <div className="w-full md:w-11/12 lg:w-9/12 md:px-4 mx-auto mb-16">
@@ -56,18 +56,18 @@ export default function Packages() {
                         <dt className="font-poiret text-xl tracking-wide">Additional Bar Setups - $200/set up</dt>
                         <dd className="tracking-wide">Need more bars to keep the drinks flowing? We've got you covered.</dd>
                         <Separator className="my-4" />                        
-                        <dt className="font-poiret text-xl tracking-wide">Extra Bar Service Hours – $150/hour</dt>
+                        <dt className="font-poiret text-xl tracking-wide">Extra Bar Service Hours - $150/hour</dt>
                         <dd className="tracking-wide">Extend the party and let the good times roll a little longer!</dd>
                         <Separator className="my-4" />                        
-                        <dt className="font-poiret text-xl tracking-wide">Mocktail Menu – $100</dt>
+                        <dt className="font-poiret text-xl tracking-wide">Mocktail Menu - $100</dt>
                         <dd className="tracking-wide">Crafted for those who prefer something non-alcoholic but just as chic.
                         </dd>
                         <Separator className="my-4" />                        
                         <dt className="font-poiret text-xl tracking-wide">Champagne Toast Wall (coming soon)</dt>
                         <dd className="tracking-wide">A showstopping way to kick off any celebration with bubbles and beauty.</dd>
                         <Separator className="my-4" />                        
-                        <dt className="font-poiret text-xl tracking-wide">Party Essentials Shopping & Delivery – $200 + cost of material</dt>
-                        <dd className="tracking-wide">Let us take the shopping off your hands—just tell us what you need, and we’ll deliver it right to your event</dd>
+                        <dt className="font-poiret text-xl tracking-wide">Party Essentials Shopping & Delivery - $200 + cost of material</dt>
+                        <dd className="tracking-wide">Let us take the shopping off your hands—just tell us what you need, and we'll deliver it right to your event</dd>
                     </dl>
                 </div>
             </div>
