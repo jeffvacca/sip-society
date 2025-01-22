@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { useToast } from "@/hooks/use-toast"
 
 
 const FormSchema = z.object({
@@ -38,22 +39,24 @@ export function ContactForm() {
             message: ""
         },
     })
+    const { toast } = useToast()
 
     function onSubmit(data: z.infer<typeof FormSchema>) {
         console.log(data);
-        // toast({
-        //   title: "You submitted the following values:",
-        //   description: (
-        //     <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-        //       <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        //     </pre>
-        //   ),
-        // })
+        toast({
+          title: "You submitted the following values:",
+          description: (
+            <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+              <p>Your message has been submitted!</p>
+            </pre>
+          ),
+        });
+        form.reset();
     }
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="w-9/12 space-y-6 text-dark  p-8  rounded-2xl ">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full md:w-9/12 space-y-6 text-dark rounded-2xl ">
                 
                 <FormField
                     control={form.control}

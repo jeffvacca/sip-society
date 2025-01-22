@@ -16,7 +16,7 @@ export interface PackageProps {
 export default function Package(props: PackageProps) {
     const {title,content,footer} = props;
     return (
-        <Card className="!bg-transparent !border-gold">
+        <Card className="!bg-transparent !border-gold mb-8 md:mb-0">
             <CardHeader>
                 <CardTitle className="font-poiret text-xl">{title}</CardTitle>
                 <CardDescription>{content}</CardDescription>

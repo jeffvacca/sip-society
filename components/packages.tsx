@@ -31,7 +31,7 @@ export default function Packages() {
                 <p className="text-center text-lg mb-16">
                     Our mobile bartending packages are designed to cater to events of all sizes, offering flexible pricing based on guest count and service requirements. Whether you're hosting an intimate party or a grand celebration, we tailor our packages to ensure your event is unforgettable while staying within your budget.
                 </p>
-                <div className="w-11/12 lg:w-9/12 px-4 mx-auto mb-16">
+                <div className="w-full md:w-11/12 lg:w-9/12 md:px-4 mx-auto mb-16">
                     <p className="text-xl mb-4 text-gold">
                         All of our mobile bartending packages include:
                     </p>
@@ -46,11 +46,11 @@ export default function Packages() {
                         <li>Travel up to 30 miles at no extra charge (additional fees for longer distances)</li>
                     </ul>
                 </div>
-                <div className="grid grid-cols-3 gap-8 mb-32">
+                <div className="md:grid grid-cols-3 gap-8 mb-32">
                     {packages.map((item, index) => <Package title={item.title} content={item.content} footer={item.footer} key={item.title} />)}
                 </div>
-                <div className="mb-24 leading-10 text-3xl uppercase text-center font-poiret text-white">Ask about custom pricing for our exclusive beer and wine-only packages!</div>
-                <div className="w-11/12 lg:w-9/12 px-4 mx-auto mb-16">
+                <div className="mb-16 md:mb-24 leading-10 text-2xl md:text-3xl uppercase text-center font-poiret text-white">Ask about custom pricing for our exclusive beer and wine-only packages!</div>
+                <div className="w-full md:w-11/12 lg:w-9/12 md:px-4 mx-auto mb-16">
                     <p className="text-xl mb-4 text-gold"> Add-Ons: </p>
                     <dl className="leading-7 pl-4">
                         <dt className="font-poiret text-xl tracking-wide">Additional Bar Setups - $200/set up</dt>
