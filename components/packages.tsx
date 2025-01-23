@@ -25,7 +25,7 @@ export default function Packages() {
 
 
     return (
-        <div className="flex w-full justify-center bg-dark py-12 font-didact text-offwhitedarker">
+        <div id="packages" className="flex w-full flex-col items-center bg-dark py-12 font-didact text-offwhitedarker">
             <div className="w-11/12 lg:w-9/12 px-4">
                 <h1 className="text-gold text-center text-4xl md:text-6xl mb-8 md:mb-16 font-poiret">Our Packages</h1>
                 <p className="text-center text-lg mb-16">
@@ -49,23 +49,32 @@ export default function Packages() {
                 <div className="md:grid grid-cols-3 gap-8 mb-32">
                     {packages.map((item) => <Package title={item.title} content={item.content} footer={item.footer} key={item.title} />)}
                 </div>
-                <div className="mb-16 md:mb-24 leading-10 text-2xl md:text-3xl uppercase text-center font-poiret text-white">Ask about custom pricing for our exclusive beer and wine-only packages!</div>
+
+
+            </div>
+
+            <div className="flex flex-col items-center justify-center w-full mb-16 md:mb-24 leading-10 text-2xl md:text-4xl uppercase text-center font-poiret text-white img-strip bg-no-repeat bg-center bg-cover h-48 relative" style={{ backgroundImage: "url('/images/photo-3.jpg')" }}>
+                <div className="absolute w-full h-full bg-dark/50"></div>
+                <div className="w-11/12 lg:w-8/12 px-4 z-10 [text-shadow:_2px_2px_0_rgb(250_226_97_/_40%)]">Ask about custom pricing for our exclusive beer & wine-only packages!</div>
+            </div>
+
+            <div className="w-11/12 lg:w-9/12 px-4">
                 <div className="w-full md:w-11/12 lg:w-9/12 md:px-4 mx-auto mb-16">
                     <p className="text-xl mb-4 text-gold"> Add-Ons: </p>
                     <dl className="leading-7 pl-4">
                         <dt className="font-poiret text-xl tracking-wide">Additional Bar Setups - $200/set up</dt>
                         <dd className="tracking-wide">Need more bars to keep the drinks flowing? We've got you covered.</dd>
-                        <Separator className="my-4" />                        
+                        <Separator className="my-4" />
                         <dt className="font-poiret text-xl tracking-wide">Extra Bar Service Hours - $150/hour</dt>
                         <dd className="tracking-wide">Extend the party and let the good times roll a little longer!</dd>
-                        <Separator className="my-4" />                        
+                        <Separator className="my-4" />
                         <dt className="font-poiret text-xl tracking-wide">Mocktail Menu - $100</dt>
                         <dd className="tracking-wide">Crafted for those who prefer something non-alcoholic but just as chic.
                         </dd>
-                        <Separator className="my-4" />                        
+                        <Separator className="my-4" />
                         <dt className="font-poiret text-xl tracking-wide">Champagne Toast Wall (coming soon)</dt>
                         <dd className="tracking-wide">A showstopping way to kick off any celebration with bubbles and beauty.</dd>
-                        <Separator className="my-4" />                        
+                        <Separator className="my-4" />
                         <dt className="font-poiret text-xl tracking-wide">Party Essentials Shopping & Delivery - $200 + cost of material</dt>
                         <dd className="tracking-wide">Let us take the shopping off your hands—just tell us what you need, and we'll deliver it right to your event</dd>
                     </dl>

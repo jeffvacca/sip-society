@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Poiret_One, Didact_Gothic } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
+import Header from "@/components/header";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,7 +43,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poiretOne.variable} ${didactGothic.variable} antialiased`}
       >
-        {/* <Header /> */}
+        <Header />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

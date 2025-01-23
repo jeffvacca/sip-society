@@ -1,5 +1,7 @@
 "use client"
-
+import React, { useRef, RefObject, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { Loader2 } from 'lucide-react';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -30,6 +32,9 @@ const FormSchema = z.object({
 })
 
 export function ContactForm() {
+    const formRef: RefObject<HTMLFormElement | null> = useRef(null);
+    const [isLoading, setIsLoading] = useState(false);
+
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
@@ -41,22 +46,60 @@ export function ContactForm() {
     const { toast } = useToast()
 
     function onSubmit(data: z.infer<typeof FormSchema>) {
-        console.log(data);
-        toast({
-          title: "You submitted the following values:",
-          description: (
-            <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-              <p>Your message has been submitted!</p>
-            </pre>
-          ),
-        });
-        form.reset();
+        setIsLoading(true);
+        const { name, email, message } = data;
+
+        emailjs
+            .send(
+                'service_dlqqud6', // Replace with your EmailJS service ID
+                'template_n733wg8', // Replace with your EmailJS template ID
+                {
+                    user_name: name,
+                    user_email: email,
+                    message: message,
+                },
+                '_AEZat3drKCLKhN-l' // Replace with your EmailJS public key
+            )
+            .then(
+                (response) => {
+                    console.log('SUCCESS!', response.status, response.text);
+                    toast({
+                        title: "Thank you for reaching out!",
+                        description: (
+                            <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+                                <p>Your message has been submitted!</p>
+                            </pre>
+                        ),
+                    });
+                    form.reset(); // Clear the form
+                    setIsLoading(false);
+                },
+                (error) => {
+                    console.error('FAILED...', error);
+                    toast({
+                        title: "Error",
+                        description: (
+                            <pre className="mt-2 w-[340px] rounded-md bg-red-400 p-4 text-offwhite">
+                                <p>Please try again...</p>
+                            </pre>
+                        ),
+                    });
+                    setIsLoading(false);
+                }
+
+
+            );
     }
+
+
+
+
+
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full md:w-9/12 space-y-6 text-dark rounded-2xl ">
-                
+            <form ref={formRef} onSubmit={form.handleSubmit(onSubmit)} className="w-full md:w-9/12 space-y-6 text-dark rounded-2xl ">
+
                 <FormField
                     control={form.control}
                     name="name"
@@ -96,7 +139,12 @@ export function ContactForm() {
                         </FormItem>
                     )}
                 />
-                <Button type="submit" variant="secondary">Submit</Button>
+                <Button type="submit" variant="secondary" disabled={isLoading}>
+                    {isLoading &&
+                        <Loader2 className="animate-spin" />
+                    }
+                    Submit
+                </Button>
             </form>
         </Form>
     )
