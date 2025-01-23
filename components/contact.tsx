@@ -6,7 +6,7 @@ import { Separator } from "./ui/separator";
 
 export default function Contact() {
     return (
-        <div className="w-full bg-offwhitedark py-12 relative font-didact relative">
+        <div id="contact" className="w-full bg-offwhitedark py-12 relative font-didact">
             <Logo className="text-black w-full opacity-5 top-16 absolute" />
 
             <h1 className="text-gold text-center text-4xl md:text-6xl mb-8 md:mb-16 font-poiret">Contact</h1>

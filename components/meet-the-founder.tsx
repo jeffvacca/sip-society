@@ -2,7 +2,7 @@ import * as React from "react"
 
 export default function MeetTheFounder() {
     return (
-        <div className="flex w-full justify-center bg-gray-100 py-12">
+        <div id="founder" className="flex w-full justify-center bg-gray-100 py-12">
             <div className="w-11/12 lg:w-9/12 px-4">
                 <h1 className="text-gold text-center text-4xl md:text-6xl mb-8 md:mb-16 font-poiret">Meet the Founder</h1>
                 <div className="md:grid grid-cols-12 gap-6 mb-16">
