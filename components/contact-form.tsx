@@ -51,14 +51,14 @@ export function ContactForm() {
 
         emailjs
             .send(
-                'service_dlqqud6', // Replace with your EmailJS service ID
-                'template_n733wg8', // Replace with your EmailJS template ID
+                'service_vowpen6', // Replace with your EmailJS service ID
+                'template_xlzsszh', // Replace with your EmailJS template ID
                 {
                     user_name: name,
                     user_email: email,
                     message: message,
                 },
-                '_AEZat3drKCLKhN-l' // Replace with your EmailJS public key
+                'SSaI3y3C4vgq25byH' // Replace with your EmailJS public key
             )
             .then(
                 (response) => {

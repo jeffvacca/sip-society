@@ -28,14 +28,14 @@ export default function Packages() {
         <div id="packages" className="flex w-full flex-col items-center bg-dark py-12 font-didact text-offwhitedarker">
             <div className="w-11/12 lg:w-9/12 px-4">
                 <h1 className="text-gold text-center text-4xl md:text-6xl mb-8 md:mb-16 font-poiret">Our Packages</h1>
-                <p className="text-center text-lg mb-16">
+                <p className="text-center text-lg mb-20">
                     Our mobile bartending packages are designed to cater to events of all sizes, offering flexible pricing based on guest count and service requirements. Whether you're hosting an intimate party or a grand celebration, we tailor our packages to ensure your event is unforgettable while staying within your budget.
                 </p>
-                <div className="w-full md:w-11/12 lg:w-9/12 md:px-4 mx-auto mb-16">
+                <div className="w-full md:w-11/12 lg:w-9/12 md:px-4 mx-auto mb-20">
                     <p className="text-xl mb-4 text-gold">
                         All of our mobile bartending packages include:
                     </p>
-                    <ul className="list list-disc list-inside  leading-7 pl-4">
+                    <ul className="list list-disc list-inside leading-7 pl-4 text-lg">
                         <li>Expert, trained bartending staff who bring both skill and style</li>
                         <li>High-quality glassware and premium plasticware for every drink</li>
                         <li>A full selection of sodas and mixers to complement your drinks</li>
