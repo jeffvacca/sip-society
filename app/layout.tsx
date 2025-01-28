@@ -32,7 +32,9 @@ const didactGothic = Didact_Gothic({
 
 export const metadata: Metadata = {
   title: "Sip Society",
-  description: "Mobile Bartending",
+  description: "Expert Mobile Bartending in the Rochester New York Area ",
+  applicationName: "Sip Society",
+  keywords: ['mobile bartending service', 'rochester, ny', 'wedding', 'private party', 'corporate events', 'cocktails', 'drinks', 'drink menu', 'mixologist']
 };
 
 export default function RootLayout({
